@@ -177,6 +177,7 @@
       animation: riseUp 1.2s cubic-bezier(0.22,1,0.36,1) forwards 0.2s;
     }
 
+    .come-line,
     .subhead {
       font-family: 'Cormorant Garamond', serif;
       font-weight: 300;
@@ -185,7 +186,15 @@
       line-height: 1.12;
       color: #CDBB98;
       opacity: 0;
+    }
+
+    .come-line {
+      margin-bottom: 1.15rem;
       animation: riseUp 1.2s cubic-bezier(0.22,1,0.36,1) forwards 0.5s;
+    }
+
+    .subhead {
+      animation: riseUp 1.2s cubic-bezier(0.22,1,0.36,1) forwards 0.7s;
     }
 
     .rule {
@@ -211,12 +220,12 @@
       font-family: 'Cormorant Garamond', serif;
       font-weight: 300;
       font-style: normal;
-      font-size: 22px;
-      line-height: 1.6;
-      color: rgba(176,186,153, 0.55);
-      letter-spacing: 0.02em;
+      font-size: clamp(1.9rem, 4vw, 38px);
+      line-height: 1.25;
+      color: #CDBB98;
+      letter-spacing: 0.01em;
       opacity: 0;
-      animation: riseUp 1.2s cubic-bezier(0.22,1,0.36,1) forwards 1.2s;
+      animation: riseUp 1.2s cubic-bezier(0.22,1,0.36,1) forwards 1.8s;
     }
 
     .rule-2 {
@@ -231,11 +240,11 @@
       font-family: 'Cormorant Garamond', serif;
       font-weight: 300;
       font-style: italic;
-      font-size: clamp(1.9rem, 4.4vw, 36px);
-      line-height: 1.2;
-      color: #978F66;
+      font-size: clamp(1.45rem, 3vw, 27px);
+      line-height: 1.35;
+      color: rgba(151,143,102,.78);
       opacity: 0;
-      animation: riseUp 1.2s cubic-bezier(0.22,1,0.36,1) forwards 1.6s;
+      animation: riseUp 1.2s cubic-bezier(0.22,1,0.36,1) forwards 1.4s;
     }
 
     /* ── Footer ── */
@@ -323,17 +332,25 @@
         line-height: 1.02;
         margin-bottom: .45rem;
       }
+      .come-line,
       .subhead {
         font-size: clamp(2rem, 10vw, 2.65rem);
         line-height: 1.08;
       }
-      .body-lines,
-      .statement {
+      .come-line {
+        margin-bottom: .9rem;
+      }
+      .body-lines {
         font-size: 21px;
         line-height: 1.55;
       }
       .question {
-        font-size: clamp(1.9rem, 9vw, 2.35rem);
+        font-size: clamp(1.45rem, 6vw, 1.85rem);
+        line-height: 1.38;
+      }
+      .statement {
+        font-size: clamp(1.85rem, 8vw, 2.4rem);
+        line-height: 1.25;
       }
       .rule-2 {
         width: 76%;
@@ -372,7 +389,7 @@
 
     @media (prefers-reduced-motion: reduce) {
       *, *::before, *::after { animation: none !important; }
-      .headline, .subhead, .rule, .body-lines, .statement, .rule-2, .question {
+      .headline, .come-line, .subhead, .rule, .body-lines, .statement, .rule-2, .question {
         opacity: 1;
         transform: none;
       }
@@ -396,7 +413,9 @@
 
     <h1 class="headline">Everything is connected.</h1>
 
-    <p class="subhead">Come.<br>Look closer.</p>
+    <p class="come-line">Come.</p>
+
+    <p class="subhead">Look closer.</p>
 
     <div class="rule"></div>
 
