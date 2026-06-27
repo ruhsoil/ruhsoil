@@ -12,19 +12,57 @@
     html,body{height:100%;background:#000;color:#f3eee6;font-family:'Jost',sans-serif;font-weight:300;overflow:hidden}
     #canvas{position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:0}
 
-    nav{display:none}
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 50;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.1rem 1.6rem;
+      background: rgba(0, 0, 0, 0.72);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+    }
+
+    .nav-brand {
+      font-size: .68rem;
+      letter-spacing: .34em;
+      font-weight: 300;
+      color: #978F66;
+      text-decoration: none;
+    }
+
+    .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 1.4rem;
+    }
+
+    .nav-label,
+    .nav-lang {
+      font-size: .6rem;
+      letter-spacing: .18em;
+      color: #978F66;
+      text-decoration: none;
+      transition: opacity .25s;
+    }
+
+    .nav-lang:hover { opacity: .65; }
 
     .hero{
       height:100vh;
+      height:100svh;
       display:flex;flex-direction:column;
       align-items:center;justify-content:center;
       text-align:center;
       position:relative;z-index:1;
+      padding-top:4.5rem;
     }
 
     .logo-wrap{
       position:relative;
-      width:380px;
+      width:min(380px,78vw);
       margin-bottom:-0.8rem;
       clip-path:inset(0 0 100% 0);
       animation:revealLogo 2.4s cubic-bezier(0.4,0,0.2,1) forwards 0.2s;
@@ -80,13 +118,87 @@
       transition:border-color .3s,color .3s,transform .3s;
     }
     .enter:hover{border-color:#F7F1DE;color:#f3eee6;transform:translateY(-2px)}
+
+    @media (max-width: 640px) {
+      nav {
+        padding: .95rem 1rem;
+      }
+      .nav-brand {
+        font-size: .58rem;
+        letter-spacing: .24em;
+      }
+      .nav-right {
+        gap: .85rem;
+      }
+      .nav-label,
+      .nav-lang {
+        font-size: .56rem;
+        letter-spacing: .14em;
+      }
+      .hero{
+        padding:4.8rem 1.15rem 2.2rem;
+      }
+      .logo-wrap{
+        width:min(320px,74vw);
+        margin-bottom:-0.55rem;
+      }
+      .brand{
+        font-size:clamp(2.7rem,16vw,4.4rem);
+        letter-spacing:.22em;
+        padding-left:.22em;
+      }
+      .kicker{
+        margin-top:.9rem;
+        font-size:.48rem;
+        letter-spacing:.22em;
+      }
+      .tagline{
+        font-size:clamp(1.45rem,8vw,2rem);
+      }
+      .enter{
+        margin-top:1.8rem;
+        padding:.82rem 1.55rem;
+        font-size:.56rem;
+        letter-spacing:.22em;
+      }
+    }
+
+    @media (max-width: 380px) {
+      .nav-brand {
+        letter-spacing: .2em;
+      }
+      .nav-right {
+        gap: .65rem;
+      }
+      .nav-label,
+      .nav-lang {
+        letter-spacing: .1em;
+      }
+      .brand{
+        font-size:clamp(2.35rem,15vw,3.7rem);
+        letter-spacing:.18em;
+        padding-left:.18em;
+      }
+      .logo-wrap{
+        width:min(285px,72vw);
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation: none !important; }
+      .logo-wrap { clip-path: inset(0 0 0 0); }
+      .brand, .kicker, .tagline, .enter { opacity: 1; transform: none; }
+    }
+
   </style>
 </head>
 <body>
 <canvas id="canvas" aria-hidden="true"></canvas>
 <nav>
-  <span class="nav-brand">RUHSOIL</span>
-  <a class="nav-lang" href="index-tr.html">EN / TR</a>
+  <a class="nav-brand" href="index.html">RUHSOIL</a>
+  <div class="nav-right">
+    <a class="nav-lang" href="index-tr.html">EN / TR</a>
+  </div>
 </nav>
 <main class="hero">
   <div class="logo-wrap">
