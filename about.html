@@ -234,12 +234,28 @@
       animation: riseUp 1.2s cubic-bezier(0.22,1,0.36,1) forwards 1.8s;
     }
 
+    .statement-inline {
+      display: inline-block;
+      margin-top: 1.05rem;
+      font-style: normal;
+      font-size: clamp(1.9rem, 4vw, 38px);
+      line-height: 1.25;
+      color: #CDBB98;
+      letter-spacing: 0.01em;
+    }
+
+    .ending-block {
+      display: flex;
+      flex-direction: column;
+      gap: 1.9rem;
+    }
+
     .rule-2 {
       width: 60%;
       height: 1px;
       background: linear-gradient(90deg, transparent, rgba(151,143,102,.5), transparent);
       opacity: 0;
-      animation: fadeIn .8s ease forwards 1.4s;
+      animation: fadeIn .8s ease forwards 1.6s;
     }
 
     .question {
@@ -333,6 +349,9 @@
         max-width: 100%;
         gap: 2.15rem;
       }
+      .ending-block {
+        gap: 1.55rem;
+      }
       .headline {
         font-size: clamp(3rem, 15vw, 4rem);
         line-height: 1.02;
@@ -355,6 +374,11 @@
         line-height: 1.38;
       }
       .statement {
+        font-size: clamp(1.85rem, 8vw, 2.4rem);
+        line-height: 1.25;
+      }
+      .statement-inline {
+        margin-top: .85rem;
         font-size: clamp(1.85rem, 8vw, 2.4rem);
         line-height: 1.25;
       }
@@ -432,15 +456,17 @@
 
     <div class="rule"></div>
 
-    <p class="question">
-      The field is open.<br>
-      The standard is aliveness.<br>
-      The enemy is fake connection.
-    </p>
+    <div class="ending-block">
+      <p class="question">
+        The field is open.<br>
+        The standard is aliveness.<br>
+        The enemy is fake connection.
+      </p>
 
-    <div class="rule-2"></div>
+      <div class="rule-2"></div>
 
-    <p class="statement">Everything starts with a question.</p>
+      <p class="statement">Everything starts with a question.</p>
+    </div>
 
   </div>
 </main>
