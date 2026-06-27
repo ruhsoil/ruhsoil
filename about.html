@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>RUHSOIL — About</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;1,300&family=Jost:wght@200;300&display=swap" rel="stylesheet"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html, body {
+      height: 100%;
+      background: #000;
+      color: #f3eee6;
+      font-family: 'Jost', sans-serif;
+      font-weight: 300;
+      overflow-x: hidden;
+    }
+
+    /* ── Canvas particle layer ── */
+    #canvas {
+      position: fixed;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 50;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.1rem 1.6rem;
+      background: rgba(0, 0, 0, 0.72);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+    }
+
+    .nav-brand {
+      font-size: .68rem;
+      letter-spacing: .34em;
+      font-weight: 300;
+      color: #978F66;
+      text-decoration: none;
+    }
+
+    .nav-lang {
+      font-size: .6rem;
+      letter-spacing: .18em;
+      color: #6b6040;
+      text-decoration: none;
+      transition: color .25s;
+    }
+
+    .nav-lang:hover { color: #978F66; }
+
+    /* ── Page wrapper ── */
+    .page {
+      position: relative;
+      z-index: 1;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 9rem 2rem 6rem;
+    }
+
+    /* ── Content column ── */
+    .about-col {
+      max-width: 680px;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 2.8rem;
+    }
+
+    .headline {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 300;
+      font-style: normal;
+      font-size: 68px;
+      line-height: 1.04;
+      color: #F7F1DE;
+      opacity: 0;
+      animation: riseUp 1.2s cubic-bezier(0.22,1,0.36,1) forwards 0.2s;
+    }
+
+    .subhead {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 300;
+      font-style: italic;
+      font-size: 42px;
+      line-height: 1.12;
+      color: #CDBB98;
+      opacity: 0;
+      animation: riseUp 1.2s cubic-bezier(0.22,1,0.36,1) forwards 0.5s;
+    }
+
+    .rule {
+      width: 100%;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(205,187,152,.2), transparent);
+      opacity: 0;
+      animation: fadeIn .8s ease forwards 0.7s;
+    }
+
+    .body-lines {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 300;
+      font-style: normal;
+      font-size: 22px;
+      line-height: 1.6;
+      color: rgba(176,186,153, 0.75);
+      opacity: 0;
+      animation: riseUp 1.2s cubic-bezier(0.22,1,0.36,1) forwards 0.9s;
+    }
+
+    .statement {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 300;
+      font-style: normal;
+      font-size: 22px;
+      line-height: 1.6;
+      color: rgba(176,186,153, 0.55);
+      letter-spacing: 0.02em;
+      opacity: 0;
+      animation: riseUp 1.2s cubic-bezier(0.22,1,0.36,1) forwards 1.2s;
+    }
+
+    .rule-2 {
+      width: 60%;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(151,143,102,.5), transparent);
+      opacity: 0;
+      animation: fadeIn .8s ease forwards 1.4s;
+    }
+
+    .question {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 300;
+      font-style: italic;
+      font-size: 36px;
+      line-height: 1.2;
+      color: #978F66;
+      opacity: 0;
+      animation: riseUp 1.2s cubic-bezier(0.22,1,0.36,1) forwards 1.6s;
+    }
+
+    /* ── Keyframes ── */
+    @keyframes riseUp {
+      from { opacity: 0; transform: translateY(22px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to   { opacity: 1; }
+    }
+  </style>
+</head>
+<body>
+<canvas id="canvas" aria-hidden="true"></canvas>
+
+<nav>
+  <a class="nav-brand" href="index.html">RUHSOIL</a>
+  <a class="nav-lang" href="/tr/">EN / TR</a>
+</nav>
+
+<main class="page">
+  <div class="about-col">
+
+    <h1 class="headline">Everything is connected.</h1>
+
+    <p class="subhead">Look closer.</p>
+
+    <div class="rule"></div>
+
+    <p class="body-lines">
+      Gestures.<br>
+      Traces.<br>
+      Patterns.<br>
+      The quiet relationships that usually pass unseen.
+    </p>
+
+    <div class="rule"></div>
+
+    <p class="statement">Every work begins with one question.</p>
+
+    <div class="rule-2"></div>
+
+    <p class="question">What invisible connection are we revealing?</p>
+
+  </div>
+</main>
+
+<script>
+  const canvas = document.getElementById('canvas');
+  const ctx = canvas.getContext('2d');
+  let W, H, particles = [];
+
+  function resize() {
+    W = canvas.width = window.innerWidth;
+    H = canvas.height = window.innerHeight;
+  }
+
+  class Particle {
+    constructor() { this.reset(true); }
+    reset(init = false) {
+      this.x = Math.random() * W;
+      this.y = init ? Math.random() * H : H + 10;
+      this.r = Math.random() * 1.1 + .2;
+      this.a = Math.random() * .12 + .025;
+      this.vy = -(Math.random() * .16 + .03);
+      this.vx = (Math.random() - .5) * .06;
+      this.life = 0;
+      this.max = Math.random() * 500 + 250;
+    }
+    draw() {
+      this.x += this.vx;
+      this.y += this.vy;
+      this.life++;
+      const t = this.life / this.max;
+      const fade = t < .15 ? t / .15 : t > .85 ? (1 - t) / .15 : 1;
+      ctx.beginPath();
+      ctx.arc(this.x, this.y, this.r, 0, Math.PI * 2);
+      ctx.fillStyle = `rgba(205,187,152,${this.a * fade})`;
+      ctx.fill();
+      if (this.life >= this.max) this.reset();
+    }
+  }
+
+  resize();
+  for (let i = 0; i < 80; i++) particles.push(new Particle());
+
+  function loop() {
+    ctx.clearRect(0, 0, W, H);
+    particles.forEach(p => p.draw());
+    requestAnimationFrame(loop);
+  }
+  loop();
+  window.addEventListener('resize', resize);
+</script>
+</body>
+</html>
