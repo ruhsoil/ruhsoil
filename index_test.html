@@ -220,17 +220,17 @@
       z-index: 1;
     }
 
-    body.ready .hero-mark-wrap {
+    .hero-mark-wrap {
       animation:
         markReveal 3.1s cubic-bezier(.16,1,.3,1) forwards .15s,
         markBreathe 8s ease-in-out infinite 3.6s;
     }
 
-    body.ready .hero-mark-wrap::before {
+    .hero-mark-wrap::before {
       animation: connectionBloom 2.9s cubic-bezier(.16,1,.3,1) forwards .25s;
     }
 
-    body.ready .hero-mark-wrap::after {
+    .hero-mark-wrap::after {
       animation: quietRing 3.4s cubic-bezier(.16,1,.3,1) forwards .45s;
     }
 
@@ -291,10 +291,10 @@
       transform: translateY(-2px);
     }
 
-    body.ready .brand { animation: riseUp 1.15s cubic-bezier(.22,1,.36,1) forwards 1.65s; }
-    body.ready .core-line { animation: riseUp 1.15s cubic-bezier(.22,1,.36,1) forwards 2.05s; }
-    body.ready .second-line { animation: riseUp 1.15s cubic-bezier(.22,1,.36,1) forwards 2.35s; }
-    body.ready .enter { animation: riseUp 1s cubic-bezier(.22,1,.36,1) forwards 2.75s; }
+    .brand { animation: riseUp 1.15s cubic-bezier(.22,1,.36,1) forwards 1.65s; }
+    .core-line { animation: riseUp 1.15s cubic-bezier(.22,1,.36,1) forwards 2.05s; }
+    .second-line { animation: riseUp 1.15s cubic-bezier(.22,1,.36,1) forwards 2.35s; }
+    .enter { animation: riseUp 1s cubic-bezier(.22,1,.36,1) forwards 2.75s; }
 
     @keyframes markReveal {
       0% {
