@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RUHSOIL</title>
+
+  <link rel="icon" href="favicon.ico" sizes="any" />
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
+  <link rel="manifest" href="site.webmanifest" />
+
+  <meta name="description" content="RUHSOIL follows connections. Everything is connected. One thing leads to another." />
+  <meta name="robots" content="index, follow" />
+  <meta name="theme-color" content="#090706" />
+  <link rel="canonical" href="https://ruhsoil.com/" />
+  <link rel="alternate" hreflang="en" href="https://ruhsoil.com/" />
+  <link rel="alternate" hreflang="tr" href="https://ruhsoil.com/tr/" />
+  <link rel="alternate" hreflang="x-default" href="https://ruhsoil.com/" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="RUHSOIL" />
+  <meta property="og:title" content="RUHSOIL" />
+  <meta property="og:description" content="Everything is connected. One thing leads to another." />
+  <meta property="og:url" content="https://ruhsoil.com/" />
+  <meta property="og:image" content="https://ruhsoil.com/RUHSOIL_LOGO_3.png" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:locale:alternate" content="tr_TR" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="RUHSOIL" />
+  <meta name="twitter:description" content="Everything is connected. One thing leads to another." />
+  <meta name="twitter:image" content="https://ruhsoil.com/RUHSOIL_LOGO_3.png" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "RUHSOIL",
+    "description": "RUHSOIL follows connections. Everything is connected. One thing leads to another.",
+    "url": "https://ruhsoil.com/",
+    "inLanguage": "en",
+    "isPartOf": {
+      "@type": "WebSite",
+      "name": "RUHSOIL",
+      "url": "https://ruhsoil.com/"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "RUHSOIL",
+      "url": "https://ruhsoil.com/",
+      "logo": "https://ruhsoil.com/RUHSOIL_LOGO.png",
+      "sameAs": [
+        "https://x.com/ruhsoil",
+        "https://www.instagram.com/ruhsoil/",
+        "https://www.youtube.com/@ruhsoil",
+        "https://www.tiktok.com/@ruhsoil"
+      ],
+      "email": "mailto:hello@ruhsoil.com"
+    }
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;1,300&family=Jost:wght@200;300;400&display=swap" rel="stylesheet" />
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --black: #090706;
+      --cream: #F3EEE6;
+      --warm: #F7F1DE;
+      --gold: #CDBB98;
+      --olive: #978F66;
+      --muted: rgba(243, 238, 230, .64);
+      --line: rgba(151, 143, 102, .22);
+    }
+
+    html, body {
+      min-height: 100%;
+      background: var(--black);
+      color: var(--cream);
+      font-family: 'Jost', sans-serif;
+      font-weight: 300;
+      overflow-x: hidden;
+      overflow-y: auto;
+    }
+
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      background:
+        radial-gradient(circle at 50% 42%, rgba(205,187,152,.08), transparent 28%),
+        radial-gradient(circle at 50% 100%, rgba(151,143,102,.08), transparent 36%),
+        #090706;
+      z-index: 0;
+    }
+
+    body::after {
+      content: '';
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      background-image:
+        linear-gradient(rgba(255,255,255,.018) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.014) 1px, transparent 1px);
+      background-size: 74px 74px;
+      opacity: .18;
+      mask-image: radial-gradient(circle at 50% 44%, black, transparent 72%);
+      z-index: 0;
+    }
+
+    a { color: inherit; }
+
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 20;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.25rem 1.75rem;
+      background: linear-gradient(to bottom, rgba(9,7,6,.84), rgba(9,7,6,.18), transparent);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+    }
+
+    .nav-brand,
+    .nav-right a {
+      font-size: .66rem;
+      letter-spacing: .24em;
+      text-transform: uppercase;
+      color: var(--olive);
+      text-decoration: none;
+      transition: color .25s ease, opacity .25s ease;
+    }
+
+    .nav-brand {
+      font-size: .74rem;
+      letter-spacing: .32em;
+      color: var(--gold);
+    }
+
+    .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 1.35rem;
+    }
+
+    .nav-right a:hover,
+    .nav-brand:hover { color: var(--warm); }
+
+    .hero {
+      position: relative;
+      z-index: 1;
+      min-height: 100vh;
+      min-height: 100svh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 5.6rem 1.5rem 4rem;
+    }
+
+    .hero-mark-wrap {
+      width: min(350px, 38vw);
+      max-width: 350px;
+      aspect-ratio: 1;
+      display: grid;
+      place-items: center;
+      margin-bottom: clamp(.65rem, 2vh, 1.3rem);
+      opacity: 0;
+      transform: scale(.94);
+      animation:
+        markReveal 2.2s cubic-bezier(.22,1,.36,1) forwards .2s,
+        markBreathe 7.5s ease-in-out infinite 2.8s;
+      will-change: opacity, transform, filter;
+    }
+
+    .hero-mark {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 50%;
+      user-select: none;
+      -webkit-user-drag: none;
+    }
+
+    .brand {
+      font-size: clamp(2.7rem, 6vw, 4.8rem);
+      line-height: 1;
+      font-weight: 200;
+      letter-spacing: .36em;
+      padding-left: .36em;
+      color: var(--cream);
+      opacity: 0;
+      transform: translateY(18px);
+      animation: riseUp 1.15s cubic-bezier(.22,1,.36,1) forwards 1.35s;
+    }
+
+    .core-line {
+      margin-top: 1.15rem;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.65rem, 3.2vw, 2.45rem);
+      line-height: 1.08;
+      font-weight: 300;
+      color: var(--warm);
+      opacity: 0;
+      transform: translateY(18px);
+      animation: riseUp 1.15s cubic-bezier(.22,1,.36,1) forwards 1.75s;
+    }
+
+    .second-line {
+      margin-top: .6rem;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.15rem, 2.2vw, 1.65rem);
+      line-height: 1.35;
+      font-weight: 300;
+      font-style: italic;
+      color: rgba(205,187,152,.8);
+      opacity: 0;
+      transform: translateY(18px);
+      animation: riseUp 1.15s cubic-bezier(.22,1,.36,1) forwards 2.05s;
+    }
+
+    .enter {
+      display: inline-block;
+      margin-top: 1.9rem;
+      padding: .86rem 1.9rem;
+      border: 1px solid rgba(151,143,102,.54);
+      color: var(--gold);
+      text-decoration: none;
+      text-transform: uppercase;
+      font-size: .6rem;
+      letter-spacing: .28em;
+      font-weight: 300;
+      opacity: 0;
+      transform: translateY(18px);
+      animation: riseUp 1s cubic-bezier(.22,1,.36,1) forwards 2.42s;
+      transition: border-color .3s ease, color .3s ease, transform .3s ease, background .3s ease;
+    }
+
+    .enter:hover {
+      border-color: var(--warm);
+      color: var(--warm);
+      background: rgba(243,238,230,.035);
+      transform: translateY(-2px);
+    }
+
+    @keyframes markReveal {
+      from {
+        opacity: 0;
+        transform: scale(.94);
+        filter: brightness(.58) blur(2px) saturate(.7);
+      }
+      to {
+        opacity: 1;
+        transform: scale(1);
+        filter: brightness(1) blur(0) saturate(1);
+      }
+    }
+
+    @keyframes markBreathe {
+      0%, 100% {
+        transform: scale(1);
+        filter: brightness(1) drop-shadow(0 0 8px rgba(205,187,152,.08));
+      }
+      50% {
+        transform: scale(1.012);
+        filter: brightness(1.06) drop-shadow(0 0 18px rgba(205,187,152,.16));
+      }
+    }
+
+    @keyframes riseUp {
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+
+    @media (min-width: 701px) and (max-height: 820px) {
+      .hero {
+        justify-content: flex-start;
+        padding-top: 5.8rem;
+        padding-bottom: 3.2rem;
+      }
+      .hero-mark-wrap {
+        width: min(315px, 34vw);
+        margin-bottom: .65rem;
+      }
+      .brand {
+        font-size: clamp(2.6rem, 5.2vw, 4.2rem);
+      }
+      .core-line {
+        margin-top: .95rem;
+        font-size: clamp(1.55rem, 2.8vw, 2.1rem);
+      }
+      .enter {
+        margin-top: 1.55rem;
+      }
+    }
+
+    @media (max-width: 700px) {
+      nav { padding: 1.05rem 1rem; }
+      .nav-brand { font-size: .66rem; letter-spacing: .24em; }
+      .nav-right { gap: .85rem; }
+      .nav-right a { font-size: .58rem; letter-spacing: .14em; }
+      .hero { padding: 5.8rem 1.1rem 2.2rem; }
+      .hero-mark-wrap { width: min(330px, 76vw); margin-bottom: .55rem; }
+      .brand { font-size: clamp(2.35rem, 13vw, 4rem); letter-spacing: .23em; padding-left: .23em; }
+      .core-line { margin-top: 1.2rem; font-size: clamp(1.65rem, 8vw, 2.4rem); }
+      .second-line { font-size: clamp(1.08rem, 5.2vw, 1.4rem); }
+      .enter { margin-top: 1.8rem; padding: .82rem 1.5rem; font-size: .55rem; letter-spacing: .22em; }
+    }
+
+    @media (max-width: 430px) {
+      .nav-right { gap: .65rem; }
+      .nav-right a { font-size: .54rem; letter-spacing: .1em; }
+      .nav-brand { letter-spacing: .18em; }
+      .hero-mark-wrap { width: min(295px, 78vw); }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation: none !important; transition: none !important; }
+      .hero-mark-wrap, .brand, .core-line, .second-line, .enter {
+        opacity: 1;
+        transform: none;
+        filter: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav aria-label="Main navigation">
+    <a class="nav-brand" href="index.html">RUHSOIL</a>
+    <div class="nav-right">
+      <a href="about.html">About</a>
+      <a href="works.html">Works</a>
+      <a href="tr/index.html">EN / TR</a>
+    </div>
+  </nav>
+
+  <main class="hero">
+    <div class="hero-mark-wrap" aria-hidden="true">
+      <img class="hero-mark" src="RUHSOIL_LOGO_3.png" alt="" />
+    </div>
+
+    <h1 class="brand">RUHSOIL</h1>
+    <p class="core-line">Everything is connected.</p>
+    <p class="second-line">One thing leads to another.</p>
+    <a class="enter" href="about.html">Enter</a>
+  </main>
+</body>
+</html>
